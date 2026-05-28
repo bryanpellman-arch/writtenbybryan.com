@@ -1,0 +1,302 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Written by Bryan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, #09111f 0%, #13233f 45%, #0a1424 100%);
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      padding: 60px 0;
+      background:
+        radial-gradient(circle at top, rgba(0, 153, 255, 0.18), transparent 35%),
+        radial-gradient(circle at bottom, rgba(255, 180, 70, 0.12), transparent 40%);
+    }
+
+    .hero-content {
+      z-index: 2;
+      animation: fadeIn 1.4s ease;
+    }
+
+    .logo {
+      width: 320px;
+      max-width: 90%;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 30px rgba(0,153,255,0.3));
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    h1 span {
+      color: #4da6ff;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: #d6d6d6;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 16px 34px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4da6ff, #1b4c9b);
+      color: white;
+      box-shadow: 0 10px 25px rgba(0,153,255,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,153,255,0.45);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #ffffff;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #b8c6db;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      line-height: 1.8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 35px;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, border 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(77,166,255,0.5);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #4da6ff;
+    }
+
+    .card p {
+      line-height: 1.8;
+      color: #d7d7d7;
+    }
+
+    .quote-section {
+      text-align: center;
+      padding: 120px 20px;
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      max-width: 900px;
+      margin: auto;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #a9b3c3;
+      font-size: 0.95rem;
+    }
+
+    .socials {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: #4da6ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      .tagline {
+        font-size: 1.05rem;
+      }
+
+      .quote {
+        font-size: 1.8rem;
+      }
+    }
+  </style></head>
+<body>  <header>
+    <div class="container hero-content"><!-- Replace logo1.png with your first logo image file -->
+  <img src="logo1.png" alt="Written by Bryan Logo" class="logo">
+
+  <h1>Written by <span>Bryan</span></h1>
+
+  <p class="tagline">
+    Stories crafted with passion, insight, creativity, and soul. Written by Bryan is where imagination meets authenticity — delivering words that inspire, move, and leave a lasting impression.
+  </p>
+
+  <div class="btn-group">
+    <a href="#services" class="btn btn-primary">Explore My Work</a>
+    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+  </div>
+</div>
+
+  </header>  <section id="services">
+    <div class="container">
+      <h2 class="section-title">What I Create</h2>
+      <p class="section-subtitle">
+        From compelling stories and original concepts to lyrics, branding ideas, and creative writing — every piece is designed to connect emotionally and stand out.
+      </p><div class="cards">
+    <div class="card">
+      <h3>Creative Writing</h3>
+      <p>
+        Engaging stories, poetry, emotional narratives, and original written works with cinematic depth and personality.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Lyrics & Music Concepts</h3>
+      <p>
+        Powerful lyrical ideas and artistic storytelling crafted for musicians, creators, and independent visionaries.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Brand Storytelling</h3>
+      <p>
+        Helping brands develop authentic voices, unforgettable taglines, and meaningful creative direction.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Vision & Inspiration</h3>
+      <p>
+        Ideas designed to motivate, inspire creativity, and transform imagination into unforgettable experiences.
+      </p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section class="quote-section">
+    <div class="container">
+      <p class="quote">
+        “Words have the power to create worlds, spark emotion, and leave echoes long after the final sentence.”
+      </p>
+    </div>
+  </section>  <section id="contact">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Connect With Bryan</h2>
+      <p class="section-subtitle">
+        Looking for original creative work, collaboration opportunities, or custom storytelling projects? Let’s build something unforgettable.
+      </p><div class="btn-group">
+    <a href="mailto:hello@writtenbybryan.com" class="btn btn-primary">Email Me</a>
+  </div>
+
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">TikTok</a>
+    <a href="#">YouTube</a>
+  </div>
+</div>
+
+  </section>  <footer>
+    © 2026 WrittenbyBryan.com — Crafted with creativity and passion.
+  </footer></body>
+</html>
